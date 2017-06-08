@@ -2,6 +2,8 @@
 
 A simple tool to crawl all Git repositories on disk, starting from a given directory. 
 
+ [![Version](https://img.shields.io/npm/v/git-repo-crawler.svg)](https://www.npmjs.com/package/git-repo-crawler) [![Downloads](https://img.shields.io/npm/dt/git-repo-crawler.svg)](https://www.npmjs.com/package/git-repo-crawler)
+
 ## Installation
 
 ```
