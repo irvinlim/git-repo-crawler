@@ -1,8 +1,9 @@
-import path from 'path';
-import dir from 'node-dir';
-import { argv } from 'yargs';
-import { execSync } from 'child_process';
-import 'colors';
+#!/usr/bin/env node
+const path = require('path');
+const dir = require('node-dir');
+const argv = require('yargs').argv;
+const execSync = require('child_process').execSync;
+require('colors');
 
 // Get root directory from argv, or default from current working directory.
 const rootDirectory = argv.d || argv.directoryRoot || process.cwd();

@@ -2,16 +2,15 @@
   "name": "git-repo-crawler",
   "version": "1.0.0",
   "description": "Crawls all Git repositories on disk from a starting directory",
-  "main": "index.js",
   "scripts": {
-    "babel": "babel-node index.js",
-    "build": "babel -d build index.js"
+    "patch-release": "npm version patch && npm publish && git push --follow-tags"
   },
   "keywords": [
     "git",
     "crawl"
   ],
   "author": "Irvin Lim",
+  "repository": "irvinlim/git-repo-crawler",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.1.2",
@@ -19,10 +18,10 @@
     "yargs": "^8.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
     "eslint": "^3.19.0"
-  }
+  },
+  "files": [
+    "bin/"
+  ],
+  "bin": "bin/git-repo-crawler"
 }
