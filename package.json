@@ -1,6 +1,6 @@
 {
   "name": "git-repo-crawler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Crawls all Git repositories on disk from a starting directory",
   "scripts": {
     "patch-release": "npm version patch && npm publish && git push --follow-tags"
