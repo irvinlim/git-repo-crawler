@@ -13,14 +13,11 @@ const command = argv.c || argv.command || '';
 dir.subdirs(rootDirectory, function(err, subdirs) {
     const gitDirectories = subdirs
         .filter(dir => dir.search(/\.git$/) >= 0)
-        .map(dir => dir.slice(0, dir.length - 4));
+        .map(dir => path.resolve(process.cwd(), dir.slice(0, dir.length - 4)));
 
-    // Run command in every 
+    // Run command in every directory.
     if (command.length) {
-        gitDirectories.forEach(dir => {
-            // Resolve path.
-            const fullPath = path.resolve(process.cwd(), dir);
-
+        gitDirectories.forEach(fullPath => {
             // Output directory to screen.
             console.log(`Running "${command}" in ${fullPath}:\n`.yellow);
 
@@ -33,5 +30,10 @@ dir.subdirs(rootDirectory, function(err, subdirs) {
             // Show when execution is complete.
             console.log('\nExecution complete.\n'.green);
         });
+    } else {
+        console.log(`Found ${gitDirectories.length} Git directories from ${path.resolve(process.cwd(), rootDirectory)}:\n`.yellow);
+        
+        // Simply print out the list of directories.
+        gitDirectories.forEach(dir => console.log(dir));
     }
 });
