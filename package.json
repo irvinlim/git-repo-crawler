@@ -4,7 +4,8 @@
   "description": "Crawls all Git repositories on disk from a starting directory",
   "main": "index.js",
   "scripts": {
-    "babel": "babel-node index.js"
+    "babel": "babel-node index.js",
+    "build": "babel -d build index.js"
   },
   "keywords": [
     "git",
